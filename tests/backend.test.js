@@ -22,6 +22,11 @@ describe('Backend modules', () => {
     permanentRecord = new PermanentRecord(db);
     emergency = new EmergencyMode(db);
     settings = new Settings(db);
+    jest.spyOn(console, 'log').mockImplementation(() => {});
+  });
+
+  afterEach(() => {
+    jest.restoreAllMocks();
   });
 
   test('pass lifecycle logs and archives correctly', () => {
@@ -70,5 +75,15 @@ describe('Backend modules', () => {
     settings.set('notify', false);
     expect(settings.get('notify')).toBe(false);
     expect(settings.getAll()).toEqual({ notify: false });
+  });
+
+  test('logging occurs for key actions', () => {
+    const logSpy = jest.spyOn(console, 'log').mockImplementation(() => {});
+    const passId = 'P2';
+    passLog.createPass(passId, { studentId: 'S2' });
+    expect(logSpy).toHaveBeenCalledWith('[PassLog] createPass', passId);
+    emergency.activate();
+    expect(logSpy).toHaveBeenCalledWith('[EmergencyMode] activate');
+    logSpy.mockRestore();
   });
 });

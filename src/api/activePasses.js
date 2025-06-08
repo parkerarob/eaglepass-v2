@@ -8,6 +8,7 @@ class ActivePasses {
       throw new Error('Active pass already exists');
     }
     this.db.activePasses.set(passId, { passId, status: 'OUT', ...data });
+    console.log('[ActivePasses] addPass', passId);
     return this.db.activePasses.get(passId);
   }
 
@@ -17,6 +18,7 @@ class ActivePasses {
       throw new Error('Active pass not found');
     }
     pass.status = status;
+    console.log('[ActivePasses] updateStatus', passId, status);
     return pass;
   }
 
@@ -26,6 +28,7 @@ class ActivePasses {
       throw new Error('Active pass not found');
     }
     this.db.activePasses.delete(passId);
+    console.log('[ActivePasses] closePass', passId);
     return pass;
   }
 
