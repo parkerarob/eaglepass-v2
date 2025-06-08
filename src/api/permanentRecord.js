@@ -5,6 +5,7 @@ class PermanentRecord {
 
   archive(passId, entries) {
     this.db.permanentRecord.push({ passId, entries });
+    console.log('[PermanentRecord] archive', passId);
     return { passId, entries };
   }
 

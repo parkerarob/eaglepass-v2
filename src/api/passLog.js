@@ -18,6 +18,7 @@ class PassLog {
       ...data,
     };
     this.db.passLog.push(entry);
+    console.log('[PassLog] createPass', passId);
     return entry;
   }
 
@@ -30,6 +31,7 @@ class PassLog {
       timestamp,
     };
     this.db.passLog.push(entry);
+    console.log('[PassLog] updateStatus', passId, status);
     return entry;
   }
 
@@ -43,6 +45,7 @@ class PassLog {
       timestamp,
     };
     this.db.passLog.push(entry);
+    console.log('[PassLog] closePass', passId);
     return entry;
   }
 

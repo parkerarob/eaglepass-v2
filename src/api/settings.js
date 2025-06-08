@@ -5,6 +5,7 @@ class Settings {
 
   set(key, value) {
     this.db.settings[key] = value;
+    console.log('[Settings] set', key, value);
   }
 
   get(key) {
