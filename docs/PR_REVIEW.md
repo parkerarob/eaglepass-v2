@@ -1,3 +1,22 @@
+# Task: Implement Student Panel UI (PR-002)
+
+Per SPEC_v2.md and Phase 2 plan — implement the **Student Panel** as a Google Apps Script Web App UI.
+
+Source of Truth:
+- SPEC_v2.md → "Student Panel" and "UI / UX Guidelines" sections
+- UI_DESIGN_PHASE2_STUDENT_PANEL.md (v2.0, June 2025)
+
+Functional Scope:
+- Mobile-first Web App with large buttons
+- Request OUT, RESTROOM, Check IN actions
+- Current status display and Emergency Mode banner
+- Pending state handling and backend logging prefix `[UI-StudentPanel]`
+
+This PR targets branch `phase-2/student-panel-ui`.
+
+## Lead Engineer Notes
+- Initial Student Panel UI with basic backend integration.
+
 # Task: Implement Phase 1 Core Backend Modules (Node-first)
 
 Per SPEC_v2.md, migration_plan_v2.md, and the approved scaffold/CI PR:
