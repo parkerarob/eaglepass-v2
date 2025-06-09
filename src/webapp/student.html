@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Student Panel</title>
+  <?!= include("webapp/styles.css") ?>
+</head>
+<body>
+  <div id="emergency-banner" class="banner hidden">EMERGENCY ACTIVE - Please remain IN PLACE</div>
+  <div id="info" class="info-box">
+    <div id="info-name"></div>
+    <div id="info-grade"></div>
+    <div id="info-id"></div>
+  </div>
+  <button id="restroom" class="action restroom">RESTROOM PASS</button>
+  <select id="destination"></select>
+  <button id="request-out" class="action out" disabled>Request OUT Pass</button>
+  <div id="status" class="status"></div>
+  <button id="check-in" class="action checkin hidden">Check IN</button>
+  <div id="pending" class="hidden">Loading...</div>
+  <footer>EaglePass v2</footer>
+  <?!= include("webapp/student.js") ?>
+</body>
+</html>
