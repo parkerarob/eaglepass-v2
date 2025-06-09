@@ -100,6 +100,58 @@ _This document defines who does what, in what order, and when._
 
 ---
 
+## Milestone Tagging Policy
+
+Major phase completions must be tagged in Git to preserve an immutable reference point.
+
+### Tag Format
+
+`v2-phaseX-complete`
+
+**Examples:**
+
+- `v2-phase1-complete`
+- `v2-phase2-complete`
+
+### When to Tag
+
+✅ After:
+- All Phase PRs are merged to `main`
+- Security GPT has approved and documented SECURITY_REVIEW_NOTES for the phase
+- Migration Plan is updated to reflect phase completion
+- QA results (if applicable for phase) are documented
+
+### Tag Command
+
+```bash
+git pull origin main
+
+git tag v2-phaseX-complete -m "Tagging Phase X Complete — summary of work done"
+
+git push origin v2-phaseX-complete
+```
+
+### Why Tag
+
+✅ Provides audit trail for external reviewers and funders  
+✅ Allows full diffs between phases  
+✅ Enables easy rollback or phase freeze points  
+✅ Aligns with `migration_plan_v2.md` and phase planning
+
+---
+
+## Important Notes
+
+- CEO (Rob) is the sole authority to declare a phase complete and tag the milestone.
+- Lead Engineer GPT or any other agent must not tag milestones unless explicitly instructed.
+- Once a milestone tag is pushed, it is not altered.
+
+---
+
+# End of Milestone Tagging Policy
+
+---
+
 # Final Notes
 
 This workflow is designed to:
